@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>场景精华对话 · Dialoghi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Outfit', 'Noto Sans SC', sans-serif; background: linear-gradient(135deg, #faf0f6 0%, #f5e6f0 100%); min-height: 100vh; color: #2c2c2c; line-height: 1.7; }
+    .back-btn { position: fixed; top: 20px; left: 20px; background: white; border: none; padding: 10px 20px; border-radius: 25px; font-size: 14px; color: #666; cursor: pointer; box-shadow: 0 2px 10px rgba(0,0,0,0.1); text-decoration: none; z-index: 100; transition: all 0.3s; }
+    .back-btn:hover { background: #ff5722; color: white; }
+    .container { max-width: 720px; margin: 0 auto; padding: 80px 20px 40px; }
+    h1 { font-family: 'Noto Serif SC', serif; font-size: 28px; font-weight: 700; margin-bottom: 8px; }
+    .subtitle { color: #666; margin-bottom: 30px; }
+    .scene { background: white; border-radius: 16px; padding: 24px; margin-bottom: 20px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+    .scene h2 { color: #ff5722; margin-bottom: 16px; font-size: 18px; }
+    .dlg { margin-bottom: 16px; padding-bottom: 16px; border-bottom: 1px dashed #eee; }
+    .dlg:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+    .role { font-size: 12px; font-weight: 600; color: #888; margin-bottom: 4px; display: flex; align-items: center; gap: 6px; }
+    .role.stylist { color: #ff5722; }
+    .role.client { color: #2196f3; }
+    .it { font-weight: 600; color: #2c2c2c; margin-bottom: 2px; }
+    .zh { font-size: 14px; color: #666; }
+    .gram { background: #fff3e0; border-radius: 8px; padding: 12px; margin-top: 12px; font-size: 14px; color: #e65100; }
+    @media (max-width: 600px) { .container { padding: 70px 16px 30px; } }
+  </style>
+</head>
+<body>
+  <a href="index.html" class="back-btn">← 返回主页</a>
+  <div class="container">
+    <h1>💬 场景精华对话</h1>
+    <p class="subtitle">Dialoghi · 13个最常用场景</p>
+
+    <div class="scene">
+      <h2>📞 场景一：电话预约</h2>
+      <div class="dlg">
+        <div class="role client">👩 顾客</div>
+        <div class="it">Pronto, buongiorno! Vorrei prendere un appuntamento.</div>
+        <div class="zh">您好！我想预约</div>
+      </div>
+      <div class="dlg">
+        <div class="role stylist">✂️ 理发师</div>
+        <div class="it">Buongiorno! Per quando?</div>
+        <div class="zh">您好！想约什么时候？</div>
+      </div>
+      <div class="dlg">
+        <div class="role client">👩 顾客</div>
+        <div class="it">Per giovedì pomeriggio.</div>
+        <div class="zh">周四下午</div>
+      </div>
+      <div class="dlg">
+        <div class="role stylist">✂️ 理发师</div>
+        <div class="it">Giovedì... alle 15:30 va bene?</div>
+        <div class="zh">周四下午3点半可以吗？</div>
+        <div class="gram">⚡ Va bene? = 可以吗？</div>
+      </div>
+      <div class="dlg">
+        <div class="role client">👩 顾客</div>
+        <div class="it">Sì, perfetto! A giovedì!</div>
+        <div class="zh">好的，周四见！</div>
+      </div>
+    </div>
+
+    <div class="scene">
+      <h2>🏪 场景二：顾客到店 + 洗头</h2>
+      <div class="dlg">
+        <div class="role stylist">✂️ 理发师</div>
+        <div class="it">Buongiorno! Si accomodi!</div>
+        <div class="zh">您好！请坐！</div>
+        <div class="gram">⚡ Si accomodi = 请坐（礼貌命令式）</div>
+      </div>
+      <div class="dlg">
+        <div class="role stylist">✂️ 理发师</div>
+        <div class="it">Allora, cosa facciamo oggi?</div>
+        <div class="zh">那今天做什么？</div>
+        <div class="gram">⚡ Allora = 那么/那（开场白神词）</div>
+      </div>
+      <div class="dlg">
+        <div class="role client">👩 顾客</div>
+        <div class="it">Vorrei tagliare e magari fare un colore.</div>
+        <div class="zh">想剪发，也许再染个色</div>
+      </div>
+      <div class="dlg">
+        <div class="role stylist">✂️ 理发师</div>
+        <div class="it">Perfetto! Prima lo shampoo, poi vediamo.</div>
+        <div class="zh">完美！先洗头，然后看看</div>
+        <div class="gram">⚡ Prima... poi... = 先...再...</div>
+      </div>
+    </div>
+
+    <div class="scene">
+      <h2>💇 场景三：剪发沟通</h2>
+      <div class="dlg">
+        <div class="role stylist">✂️ 理发师</div>
+        <div class="it">Allora, come li vuole tagliare?</div>
+        <div class="zh">那您想怎么剪？</div>
+        <div class="gram">⚡ Li = 它们（指头发，宾格代词）</div>
+      </div>
+      <div class="dlg">
+        <div class="role client">👩 顾客</div>
+        <div class="it">Vorrei tagliare più o meno 5 cm.</div>
+        <div class="zh">我想剪大概5厘米</div>
+      </div>
+      <div class="dlg">
+        <div class="role stylist">✂️ 理发师</div>
+        <div class="it">Scalato o pari?</div>
+        <div class="zh">有层次还是齐的？</div>
+      </div>
+      <div class="dlg">
+        <div class="role stylist">✂️ 理发师</div>
+        <div class="it">E la frangia? La vuole?</div>
+        <div class="zh">刘海呢？要不要？</div>
+        <div class="gram">⚡ La = 它（指刘海，宾格代词）</div>
+      </div>
+      <div class="dlg">
+        <div class="role stylist">✂️ 理发师</div>
+        <div class="it">Così va bene?</div>
+        <div class="zh">这样可以吗？</div>
+      </div>
+    </div>
+
+    <div class="scene">
+      <h2>💳 场景四：结账告别</h2>
+      <div class="dlg">
+        <div class="role stylist">✂️ 理发师</div>
+        <div class="it">Il totale è 55 euro.</div>
+        <div class="zh">一共55欧</div>
+      </div>
+      <div class="dlg">
+        <div class="role client">👩 顾客</div>
+        <div class="it">Pago con la carta.</div>
+        <div class="zh">我刷卡</div>
+      </div>
+      <div class="dlg">
+        <div class="role stylist">✂️ 理发师</div>
+        <div class="it">Certo! Ecco lo scontrino. Una firma qui, per favore.</div>
+        <div class="zh">没问题！这是小票。请在这里签名</div>
+      </div>
+      <div class="dlg">
+        <div class="role stylist">✂️ 理发师</div>
+        <div class="it">Grazie a Lei! Buona giornata! ArrivederLa!</div>
+        <div class="zh">谢谢您！祝您愉快！再见！</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
