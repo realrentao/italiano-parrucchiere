@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>产品与工具 · Prodotti</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Outfit', 'Noto Sans SC', sans-serif; background: linear-gradient(135deg, #faf0f6 0%, #f5e6f0 100%); min-height: 100vh; color: #2c2c2c; }
+    .back-btn { position: fixed; top: 20px; left: 20px; background: white; border: none; padding: 10px 20px; border-radius: 25px; font-size: 14px; color: #666; cursor: pointer; box-shadow: 0 2px 10px rgba(0,0,0,0.1); text-decoration: none; z-index: 100; transition: all 0.3s; }
+    .back-btn:hover { background: #2196f3; color: white; }
+    .container { max-width: 720px; margin: 0 auto; padding: 80px 20px 40px; }
+    h1 { font-family: 'Noto Serif SC', serif; font-size: 28px; font-weight: 700; margin-bottom: 8px; }
+    .subtitle { color: #666; margin-bottom: 30px; }
+    h2 { font-size: 20px; color: #2196f3; margin: 30px 0 16px; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 12px; }
+    .item { background: white; border-radius: 12px; padding: 16px; text-align: center; box-shadow: 0 2px 10px rgba(0,0,0,0.06); }
+    .item-it { font-weight: 600; font-size: 16px; color: #2c2c2c; margin-bottom: 4px; }
+    .item-zh { font-size: 13px; color: #888; }
+    @media (max-width: 600px) { .container { padding: 70px 16px 30px; } .grid { grid-template-columns: repeat(2, 1fr); } }
+  </style>
+</head>
+<body>
+  <a href="index.html" class="back-btn">← 返回主页</a>
+  <div class="container">
+    <h1>🧴 产品与工具</h1>
+    <p class="subtitle">Prodotti e attrezzi · 美发用品大全</p>
+
+    <h2>洗发护发</h2>
+    <div class="grid">
+      <div class="item"><div class="item-it">Lo shampoo</div><div class="item-zh">洗发水</div></div>
+      <div class="item"><div class="item-it">Il balsamo</div><div class="item-zh">护发素</div></div>
+      <div class="item"><div class="item-it">La maschera</div><div class="item-zh">发膜</div></div>
+      <div class="item"><div class="item-it">L'olio</div><div class="item-zh">护发油</div></div>
+    </div>
+
+    <h2>定型产品</h2>
+    <div class="grid">
+      <div class="item"><div class="item-it">La lacca</div><div class="item-zh">定型喷雾</div></div>
+      <div class="item"><div class="item-it">Il gel</div><div class="item-zh">发胶</div></div>
+      <div class="item"><div class="item-it">La cera</div><div class="item-zh">发蜡</div></div>
+      <div class="item"><div class="item-it">La mousse</div><div class="item-zh">摩丝</div></div>
+      <div class="item"><div class="item-it">Lo spray</div><div class="item-zh">喷雾</div></div>
+    </div>
+
+    <h2>美发工具</h2>
+    <div class="grid">
+      <div class="item"><div class="item-it">Il phon</div><div class="item-zh">吹风机</div></div>
+      <div class="item"><div class="item-it">La piastra</div><div class="item-zh">直发夹板</div></div>
+      <div class="item"><div class="item-it">La spazzola</div><div class="item-zh">发刷</div></div>
+      <div class="item"><div class="item-it">Il pettine</div><div class="item-zh">梳子</div></div>
+      <div class="item"><div class="item-it">Le forbici</div><div class="item-zh">剪刀</div></div>
+      <div class="item"><div class="item-it">Il rasoio</div><div class="item-zh">剃刀</div></div>
+      <div class="item"><div class="item-it">La macchinetta</div><div class="item-zh">电推子</div></div>
+      <div class="item"><div class="item-it">Il bigodino</div><div class="item-zh">发卷</div></div>
+    </div>
+
+    <h2>场所设备</h2>
+    <div class="grid">
+      <div class="item"><div class="item-it">Il lavandino</div><div class="item-zh">洗头池</div></div>
+      <div class="item"><div class="item-it">Lo specchio</div><div class="item-zh">镜子</div></div>
+      <div class="item"><div class="item-it">La poltrona</div><div class="item-zh">理发椅</div></div>
+      <div class="item"><div class="item-it">Il bancone</div><div class="item-zh">收银台</div></div>
+      <div class="item"><div class="item-it">Il salone</div><div class="item-zh">发廊</div></div>
+    </div>
+  </div>
+</body>
+</html>
