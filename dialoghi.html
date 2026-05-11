@@ -7,9 +7,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    * { margin:0; padding:0; box-sizing: border-box; }
     body { font-family: 'Outfit', 'Noto Sans SC', sans-serif; background: linear-gradient(135deg, #faf0f6 0%, #f5e6f0 100%); min-height: 100vh; color: #2c2c2c; line-height: 1.7; }
-    .back-btn { position: fixed; top: 20px; left: 20px; background: white; border: none; padding: 10px 20px; border-radius: 25px; font-size: 14px; color: #666; cursor: pointer; box-shadow: 0 2px 10px rgba(0,0,0,0.1); text-decoration: none; z-index: 100; transition: all 0.3s; }
+    .back-btn { position: fixed; top: 20px; left: 20px; background: white; border: none; padding: 10px 20px; border-radius: 25px; font-size: 14px; color: #666; cursor: pointer; box-shadow: 0 2px 10px rgba(0,0,0,0.1); text-decoration: none; z-index: 100; transition: all 0.3s; display: inline-block; }
     .back-btn:hover { background: #ff5722; color: white; }
     .container { max-width: 720px; margin: 0 auto; padding: 80px 20px 40px; }
     h1 { font-family: 'Noto Serif SC', serif; font-size: 28px; font-weight: 700; margin-bottom: 8px; }
@@ -33,6 +33,7 @@
     <h1>💬 场景精华对话</h1>
     <p class="subtitle">Dialoghi · 13个最常用场景</p>
 
+    <!-- 场景一 -->
     <div class="scene">
       <h2>📞 场景一：电话预约</h2>
       <div class="dlg">
@@ -44,6 +45,7 @@
         <div class="role stylist">✂️ 理发师</div>
         <div class="it">Buongiorno! Per quando?</div>
         <div class="zh">您好！想约什么时候？</div>
+        <div class="gram">⚡ Per quando? = 约什么时候？</div>
       </div>
       <div class="dlg">
         <div class="role client">👩 顾客</div>
@@ -63,6 +65,7 @@
       </div>
     </div>
 
+    <!-- 场景二 -->
     <div class="scene">
       <h2>🏪 场景二：顾客到店 + 洗头</h2>
       <div class="dlg">
@@ -88,10 +91,150 @@
         <div class="zh">完美！先洗头，然后看看</div>
         <div class="gram">⚡ Prima... poi... = 先...再...</div>
       </div>
+      <div class="dlg">
+        <div class="role stylist">✂️ 理发师</div>
+        <div class="it">Si vuole sedere qui al lavandino?</div>
+        <div class="zh">您坐到洗头池这边来？</div>
+      </div>
+      <div class="dlg">
+        <div class="role stylist">✂️ 理发师</div>
+        <div class="it">L'acqua è calda? La pressione va bene?</div>
+        <div class="zh">水温合适吗？水压可以吗？</div>
+      </div>
     </div>
 
+    <!-- 场景三 -->
     <div class="scene">
-      <h2>💇 场景三：剪发沟通</h2>
+      <h2>💇 场景三：顾客说"我要染金发"</h2>
+      <div class="dlg">
+        <div class="role stylist">✂️ 理发师</div>
+        <div class="it">Tu comunque hai tantissimo capelli.</div>
+        <div class="zh">你头发真的很多</div>
+      </div>
+      <div class="dlg">
+        <div class="role stylist">✂️ 理发师</div>
+        <div class="it">Io vorrei mantenere la tua parte naturale.</div>
+        <div class="zh">我建议保留你的自然部分</div>
+      </div>
+      <div class="dlg">
+        <div class="role stylist">✂️ 理发师</div>
+        <div class="it">Sulla tua carnagione ti starebbe bene un biondo freddo.</div>
+        <div class="zh">你的肤色适合冷调金发</div>
+        <div class="gram">⚡ Ti sta bene = 适合你</div>
+      </div>
+      <div class="dlg">
+        <div class="role stylist">✂️ 理发师</div>
+        <div class="it">Con tutti questi capelli, dobbiamo fare due step.</div>
+        <div class="zh">头发这么多，得分两步做</div>
+      </div>
+    </div>
+
+    <!-- 场景四 -->
+    <div class="scene">
+      <h2>✂️ 场景四：发质细，能不能做挑染？</h2>
+      <div class="dlg">
+        <div class="role stylist">✂️ 理发师</div>
+        <div class="it">Allora, che colore hai in mente?</div>
+        <div class="zh">那，你想要什么颜色？</div>
+      </div>
+      <div class="dlg">
+        <div class="role client">👩 顾客</div>
+        <div class="it">Vorrei fare le mèches, tipo un biondo.</div>
+        <div class="zh">我想做挑染，金色的那种</div>
+      </div>
+      <div class="dlg">
+        <div class="role stylist">✂️ 理发师</div>
+        <div class="it">I tuoi capelli sono molto fini, le mèches non vanno bene.</div>
+        <div class="zh">你的头发很细，做挑染不好</div>
+      </div>
+      <div class="dlg">
+        <div class="role stylist">✂️ 理发师</div>
+        <div class="it">Perché rovinano i capelli.</div>
+        <div class="zh">因为会破坏头发</div>
+        <div class="gram">⚡ Perché = 因为 / 为什么</div>
+      </div>
+      <div class="dlg">
+        <div class="role stylist">✂️ 理发师</div>
+        <div class="it">Però possiamo fare una tonalizzazione.</div>
+        <div class="zh">不过我们可以做沐浴染</div>
+      </div>
+      <div class="dlg">
+        <div class="role stylist">✂️ 理发师</div>
+        <div class="it">Oppure un colpo di sole leggero.</div>
+        <div class="zh">或者轻微的阳光挑染</div>
+      </div>
+    </div>
+
+    <!-- 场景五 -->
+    <div class="scene">
+      <h2>😤 场景五：遇到硬核情况 — 沟通不顺利时</h2>
+      <div class="dlg">
+        <div class="role stylist">✂️ 理发师</div>
+        <div class="it">Non posso fare. I tuoi capelli sono troppo danneggiati.</div>
+        <div class="zh">我做不了。你头发损伤太严重</div>
+        <div class="gram">⚡ Non posso = 我不能</div>
+      </div>
+      <div class="dlg">
+        <div class="role client">👩 顾客</div>
+        <div class="it">Eh? Perché? Non si può fare niente?</div>
+        <div class="zh">啊？为什么？一点办法都没有？</div>
+      </div>
+      <div class="dlg">
+        <div class="role stylist">✂️ 理发师</div>
+        <div class="it">Mi dispiace. Esci!</div>
+        <div class="zh">不行，抱歉。你出去！</div>
+      </div>
+      <div class="dlg">
+        <div class="role stylist">✂️ 理发师</div>
+        <div class="it">Via! Non voglio rovinare i tuoi capelli.</div>
+        <div class="zh">走吧！我不想毁了你的头发</div>
+      </div>
+      <div class="dlg">
+        <div class="role stylist">✂️ 理发师</div>
+        <div class="it">Possiamo fare una cosa più leggera.</div>
+        <div class="zh">我们可以做个温和点的</div>
+      </div>
+    </div>
+
+    <!-- 场景六 -->
+    <div class="scene">
+      <h2>🔥 场景六：头发受损了怎么办？</h2>
+      <div class="dlg">
+        <div class="role stylist">✂️ 理发师</div>
+        <div class="it">Cosa è successo ai tuoi capelli?</div>
+        <div class="zh">你的头发怎么了？</div>
+      </div>
+      <div class="dlg">
+        <div class="role stylist">✂️ 理发师</div>
+        <div class="it">Qua dietro è un po' rovinato.</div>
+        <div class="zh">后面这里有点受损</div>
+      </div>
+      <div class="dlg">
+        <div class="role stylist">✂️ 理发师</div>
+        <div class="it">I tuoi capelli sono molto fini, attenzione.</div>
+        <div class="zh">你头发很细，要注意</div>
+      </div>
+      <div class="dlg">
+        <div class="role stylist">✂️ 理发师</div>
+        <div class="it">Dobbiamo cercare di riportare alla tua base naturale.</div>
+        <div class="zh">我们得试着回到你的自然底色</div>
+      </div>
+      <div class="dlg">
+        <div class="role stylist">✂️ 理发师</div>
+        <div class="it">Ti consiglio di tagliare almeno 5 cm.</div>
+        <div class="zh">我建议至少剪5厘米</div>
+        <div class="gram">⚡ Ti consiglio di + 动词 = 我建议你...</div>
+      </div>
+      <div class="dlg">
+        <div class="role stylist">✂️ 理发师</div>
+        <div class="it">C'è un trattamento adatto per capelli stressati.</div>
+        <div class="zh">有适合受损发的护理</div>
+      </div>
+    </div>
+
+    <!-- 场景七 -->
+    <div class="scene">
+      <h2>💁 场景七：剪发过程沟通</h2>
       <div class="dlg">
         <div class="role stylist">✂️ 理发师</div>
         <div class="it">Allora, come li vuole tagliare?</div>
@@ -102,6 +245,11 @@
         <div class="role client">👩 顾客</div>
         <div class="it">Vorrei tagliare più o meno 5 cm.</div>
         <div class="zh">我想剪大概5厘米</div>
+      </div>
+      <div class="dlg">
+        <div class="role stylist">✂️ 理发师</div>
+        <div class="it">Fino a qui?</div>
+        <div class="zh">到这儿？</div>
       </div>
       <div class="dlg">
         <div class="role stylist">✂️ 理发师</div>
@@ -116,34 +264,234 @@
       </div>
       <div class="dlg">
         <div class="role stylist">✂️ 理发师</div>
-        <div class="it">Così va bene?</div>
-        <div class="zh">这样可以吗？</div>
+        <div class="it">Ecco, così di lunghezza va bene?</div>
+        <div class="zh">这样长度合适吗？</div>
       </div>
     </div>
 
+    <!-- 场景八 -->
     <div class="scene">
-      <h2>💳 场景四：结账告别</h2>
+      <h2>🌀 场景八：烫发咨询</h2>
       <div class="dlg">
         <div class="role stylist">✂️ 理发师</div>
-        <div class="it">Il totale è 55 euro.</div>
-        <div class="zh">一共55欧</div>
+        <div class="it">Buongiorno! Che tipo di permanente vorrebbe?</div>
+        <div class="zh">您好！您想做哪种烫发？</div>
+        <div class="gram">⚡ vorrebbe = 您想（条件式，礼貌）</div>
+      </div>
+      <div class="dlg">
+        <div class="role stylist">✂️ 理发师</div>
+        <div class="it">Dipende dal suo tipo di capello. I suoi capelli sono molto fini.</div>
+        <div class="zh">看您的发质。您的头发很细</div>
+      </div>
+      <div class="dlg">
+        <div class="role stylist">✂️ 理发师</div>
+        <div class="it">Le consiglio una permanente morbida, non troppo stretta.</div>
+        <div class="zh">我建议做柔和烫，不要太紧的卷</div>
+        <div class="gram">⚡ Le consiglio... = 我建议您...</div>
+      </div>
+      <div class="dlg">
+        <div class="role stylist">✂️ 理发师</div>
+        <div class="it">La permanente dura circa 3-4 mesi.</div>
+        <div class="zh">烫发大概维持3-4个月</div>
       </div>
       <div class="dlg">
         <div class="role client">👩 顾客</div>
-        <div class="it">Pago con la carta.</div>
-        <div class="zh">我刷卡</div>
+        <div class="it">E se volessi i capelli lisci?</div>
+        <div class="zh">如果我想做直发呢？</div>
       </div>
       <div class="dlg">
         <div class="role stylist">✂️ 理发师</div>
-        <div class="it">Certo! Ecco lo scontrino. Una firma qui, per favore.</div>
-        <div class="zh">没问题！这是小票。请在这里签名</div>
-      </div>
-      <div class="dlg">
-        <div class="role stylist">✂️ 理发师</div>
-        <div class="it">Grazie a Lei! Buona giornata! ArrivederLa!</div>
-        <div class="zh">谢谢您！祝您愉快！再见！</div>
+        <div class="it">Allora possiamo fare la stiratura.</div>
+        <div class="zh">那我们可以做拉直</div>
+        <div class="gram">⚡ Prima... poi... = 先...再...</div>
       </div>
     </div>
+
+    <!-- 场景九 -->
+    <div class="scene">
+      <h2>🧴 场景九：推荐产品</h2>
+      <div class="dlg">
+        <div class="role stylist">✂️ 理发师</div>
+        <div class="it">Allora, ecco fatto! Le piace il taglio?</div>
+        <div class="zh">好了！您喜欢这个剪法吗？</div>
+      </div>
+      <div class="dlg">
+        <div class="role client">👩 顾客</div>
+        <div class="it">Sì, è bellissimo! Che prodotti usa?</div>
+        <div class="zh">是的，太美了！您用什么产品？</div>
+      </div>
+      <div class="dlg">
+        <div class="role stylist">✂️ 理发师</div>
+        <div class="it">Usiamo una linea professionale. Vuole vedere?</div>
+        <div class="zh">我们用专业线。您想看看吗？</div>
+      </div>
+      <div class="dlg">
+        <div class="role stylist">✂️ 理发师</div>
+        <div class="it">Sì, questo shampoo per capelli grassi. Costa 18 euro.</div>
+        <div class="zh">有，这款控油洗发水。18欧</div>
+      </div>
+      <div class="dlg">
+        <div class="role stylist">✂️ 理发师</div>
+        <div class="it">Le consiglio questa maschera nutriente.</div>
+        <div class="zh">我推荐这款营养发膜</div>
+        <div class="gram">⚡ Le consiglio + 名词 = 我推荐给您</div>
+      </div>
+      <div class="dlg">
+        <div class="role stylist">✂️ 理发师</div>
+        <div class="it">E un po' d'olio sulle punte, così non si seccano.</div>
+        <div class="zh">还有发尾油，这样就不会干</div>
+      </div>
+    </div>
+
+    <!-- 场景十 -->
+    <div class="scene">
+      <h2>💇‍♂️ 场景十：男士理发（Barbiere）</h2>
+      <div class="dlg">
+        <div class="role client">👨 男顾客</div>
+        <div class="it">Buongiorno! Ho bisogno di un taglio.</div>
+        <div class="zh">您好！需要剪发</div>
+        <div class="gram">⚡ Ho bisogno di = 我需要</div>
+      </div>
+      <div class="dlg">
+        <div class="role stylist">✂️ 理发师</div>
+        <div class="it">Buongiorno! Come lo vuole il taglio?</div>
+        <div class="zh">您好！想怎么剪？</div>
+      </div>
+      <div class="dlg">
+        <div class="role client">👨 男顾客</div>
+        <div class="it">Corto ai lati, più lungo sopra.</div>
+        <div class="zh">两边短，上面留长</div>
+      </div>
+      <div class="dlg">
+        <div class="role stylist">✂️ 理发师</div>
+        <div class="it">Quanto corto ai lati? Macchinetta o forbice?</div>
+        <div class="zh">两边多短？电推还是剪刀？</div>
+      </div>
+      <div class="dlg">
+        <div class="role stylist">✂️ 理发师</div>
+        <div class="it">E la barba? Gliela sistemo?</div>
+        <div class="zh">胡子呢？帮您修一下？</div>
+        <div class="gram">⚡ Gliela = 给您修它（宾格叠用）</div>
+      </div>
+      <div class="dlg">
+        <div class="role stylist">✂️ 理发师</div>
+        <div class="it">Ecco fatto! Le piace?</div>
+        <div class="zh">好了！满意吗？</div>
+      </div>
+      <div class="dlg">
+        <div class="role client">👨 男顾客</div>
+        <div class="it">Perfetto! Quanto le devo?</div>
+        <div class="zh">完美！多少钱？</div>
+      </div>
+    </div>
+
+    <!-- 场景十一 -->
+    <div class="scene">
+      <h2>💄 场景十一：吹造型 + 最后收尾</h2>
+      <div class="dlg">
+        <div class="role stylist">✂️ 理发师</div>
+        <div class="it">Allora, come le asciughiamo? Lisci o mossi?</div>
+        <div class="zh">那怎么吹？直发还是卷发？</div>
+      </div>
+      <div class="dlg">
+        <div class="role client">👩 顾客</div>
+        <div class="it">Lisci, ma non troppo piatti.</div>
+        <div class="zh">吹直，但不要太扁塌</div>
+      </div>
+      <div class="dlg">
+        <div class="role stylist">✂️ 理发师</div>
+        <div class="it">Mettiamo un po' di mousse prima per dare volume.</div>
+        <div class="zh">先上点摩丝增加蓬松感</div>
+      </div>
+      <div class="dlg">
+        <div class="role stylist">✂️ 理发师</div>
+        <div class="it">Mettiamo un po' di lacca per tenere?</div>
+        <div class="zh">喷点定型喷雾定个型？</div>
+      </div>
+      <div class="dlg">
+        <div class="role stylist">✂️ 理发师</div>
+        <div class="it">Ecco fatto! Si guardi allo specchio. Le piace?</div>
+        <div class="zh">好了！照照镜子。喜欢吗？</div>
+      </div>
+      <div class="dlg">
+        <div class="role stylist">✂️ 理发师</div>
+        <div class="it">Che bello, sono contenta!</div>
+        <div class="zh">太好了，我很开心！</div>
+      </div>
+    </div>
+
+    <!-- 场景十二 -->
+    <div class="scene">
+      <h2>👦 场景十二：儿童理发</h2>
+      <div class="dlg">
+        <div class="role client">👩 顾客</div>
+        <div class="it">Buongiorno! Mio figlio ha bisogno di un taglio.</div>
+        <div class="zh">您好！我儿子需要剪发</div>
+      </div>
+      <div class="dlg">
+        <div class="role stylist">✂️ 理发师</div>
+        <div class="it">Buongiorno! Quanti anni ha?</div>
+        <div class="zh">您好！他几岁？</div>
+      </div>
+      <div class="dlg">
+        <div class="role stylist">✂️ 理发师</div>
+        <div class="it">Ciao! Come ti chiami?</div>
+        <div class="zh">嗨！你叫什么名字？</div>
+        <div class="gram">⚡ 对孩子用 Tu 形式（Come ti chiami?）</div>
+      </div>
+      <div class="dlg">
+        <div class="role stylist">✂️ 理发师</div>
+        <div class="it">Luca, siediti qui, così giochiamo!</div>
+        <div class="zh">卢卡，坐这儿，我们玩！</div>
+      </div>
+      <div class="dlg">
+        <div class="role stylist">✂️ 理发师</div>
+        <div class="it">Ecco! Bravo Luca! Facciamo l'aeroplano!</div>
+        <div class="zh">好了！卢卡真棒！我们玩"飞机"游戏！</div>
+      </div>
+      <div class="dlg">
+        <div class="role stylist">✂️ 理发师</div>
+        <div class="it">Sei stato tranquillo!</div>
+        <div class="zh">你很乖！</div>
+      </div>
+    </div>
+
+    <!-- 场景十三 -->
+    <div class="scene">
+      <h2>😤 场景十三：危机处理 — 顾客不满意</h2>
+      <div class="dlg">
+        <div class="role client">👩 顾客</div>
+        <div class="it">Non mi piace... è troppo corto.</div>
+        <div class="zh">我不喜欢...太短了</div>
+      </div>
+      <div class="dlg">
+        <div class="role stylist">✂️ 理发师</div>
+        <div class="it">Mi dispiace tanto. Cosa possiamo fare?</div>
+        <div class="zh">非常抱歉。我们能做什么？</div>
+      </div>
+      <div class="dlg">
+        <div class="role client">👩 顾客</div>
+        <div class="it">Non lo so... non è quello che volevo.</div>
+        <div class="zh">我不知道...不是我想要的</div>
+      </div>
+      <div class="dlg">
+        <div class="role stylist">✂️ 理发师</div>
+        <div class="it">Possiamo aggiustare un po'. Si guardi tra 5 minuti.</div>
+        <div class="zh">我们可以调整一下。5分钟后再看</div>
+      </div>
+      <div class="dlg">
+        <div class="role stylist">✂️ 理发师</div>
+        <div class="it">Le piace di più così?</div>
+        <div class="zh">您更喜欢这样吗？</div>
+      </div>
+      <div class="dlg">
+        <div class="role stylist">✂️ 理发师</div>
+        <div class="it">Si figuri! L'importante è che Lei sia contenta.</div>
+        <div class="zh">没关系！重要的是您满意</div>
+        <div class="gram">⚡ 危机4步法：道歉→询问→补救→确认</div>
+      </div>
+    </div>
+
   </div>
 </body>
 </html>
