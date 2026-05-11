@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>烫发与拉直 · Permanente</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Outfit', 'Noto Sans SC', sans-serif; background: linear-gradient(135deg, #faf0f6 0%, #f5e6f0 100%); min-height: 100vh; color: #2c2c2c; }
+    .back-btn { position: fixed; top: 20px; left: 20px; background: white; border: none; padding: 10px 20px; border-radius: 25px; font-size: 14px; color: #666; cursor: pointer; box-shadow: 0 2px 10px rgba(0,0,0,0.1); text-decoration: none; z-index: 100; transition: all 0.3s; }
+    .back-btn:hover { background: #673ab7; color: white; }
+    .container { max-width: 720px; margin: 0 auto; padding: 80px 20px 40px; }
+    h1 { font-family: 'Noto Serif SC', serif; font-size: 28px; font-weight: 700; margin-bottom: 8px; }
+    .subtitle { color: #666; margin-bottom: 30px; }
+    .vocab-list { background: white; border-radius: 16px; padding: 24px; margin-bottom: 20px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+    .vocab-item { display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid #f0f0f0; }
+    .vocab-item:last-child { border-bottom: none; }
+    .vocab-it { font-weight: 600; color: #2c2c2c; }
+    .vocab-zh { color: #888; }
+    .tip { background: #ede7f6; border-radius: 12px; padding: 16px; margin-top: 20px; }
+    .tip-title { font-weight: 600; color: #673ab7; margin-bottom: 8px; }
+    .tip p { font-size: 14px; color: #666; line-height: 1.7; }
+    .dialogue { background: white; border-radius: 16px; padding: 24px; margin-top: 20px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+    .dialogue h2 { color: #673ab7; margin-bottom: 16px; }
+    .dlg-item { margin-bottom: 16px; padding-bottom: 16px; border-bottom: 1px dashed #eee; }
+    .dlg-item:last-child { border-bottom: none; margin-bottom: 0; }
+    .dlg-role { font-size: 12px; font-weight: 600; color: #888; margin-bottom: 4px; }
+    .dlg-it { font-weight: 600; color: #2c2c2c; margin-bottom: 2px; }
+    .dlg-zh { font-size: 14px; color: #666; }
+    @media (max-width: 600px) { .container { padding: 70px 16px 30px; } }
+  </style>
+</head>
+<body>
+  <a href="index.html" class="back-btn">← 返回主页</a>
+  <div class="container">
+    <h1>🌀 烫发与拉直</h1>
+    <p class="subtitle">Permanente e stiratura · 意大利女性特别爱烫发</p>
+
+    <div class="vocab-list">
+      <div class="vocab-item"><span class="vocab-it">Fare la permanente</span><span class="vocab-zh">烫发</span></div>
+      <div class="vocab-item"><span class="vocab-it">La permanente morbida</span><span class="vocab-zh">柔和烫（大卷）</span></div>
+      <div class="vocab-item"><span class="vocab-it">La permanente stretta</span><span class="vocab-zh">紧烫（小卷）</span></div>
+      <div class="vocab-item"><span class="vocab-it">Stirare / La stiratura</span><span class="vocab-zh">拉直</span></div>
+      <div class="vocab-item"><span class="vocab-it">Durare</span><span class="vocab-zh">持续/维持</span></div>
+      <div class="vocab-item"><span class="vocab-it">Dipendere da</span><span class="vocab-zh">取决于</span></div>
+      <div class="vocab-item"><span class="vocab-it">Seccare</span><span class="vocab-zh">使变干</span></div>
+      <div class="vocab-item"><span class="vocab-it">Il trattamento nutriente</span><span class="vocab-zh">营养护理</span></div>
+    </div>
+
+    <div class="tip">
+      <div class="tip-title">💡 记忆技巧</div>
+      <p>• <strong>Permanente</strong> = 永久的，烫发就是"做永久的"<br>
+      • <strong>Morbida</strong> = 柔和的/软的 → 柔和烫<br>
+      • <strong>Stretta</strong> = 紧的/密集的 → 紧烫<br>
+      • La permanente <strong>dura</strong> 3 mesi = 烫发维持3个月</p>
+    </div>
+
+    <div class="dialogue">
+      <h2>💬 烫发咨询对话</h2>
+      <div class="dlg-item">
+        <div class="dlg-role">👩 顾客</div>
+        <div class="dlg-it">Buongiorno! Vorrei fare la permanente.</div>
+        <div class="dlg-zh">您好！我想烫发</div>
+      </div>
+      <div class="dlg-item">
+        <div class="dlg-role">✂️ 理发师</div>
+        <div class="dlg-it">Che tipo di permanente vorrebbe?</div>
+        <div class="dlg-zh">您想做哪种烫发？</div>
+      </div>
+      <div class="dlg-item">
+        <div class="dlg-role">✂️ 理发师</div>
+        <div class="dlg-it">Dipende dal suo tipo di capello. Le consiglio una permanente morbida, non troppo stretta.</div>
+        <div class="dlg-zh">看您的发质。我建议做柔和烫，不要太紧的卷</div>
+      </div>
+      <div class="dlg-item">
+        <div class="dlg-role">👩 顾客</div>
+        <div class="dlg-it">E quanto dura?</div>
+        <div class="dlg-zh">能维持多久？</div>
+      </div>
+      <div class="dlg-item">
+        <div class="dlg-role">✂️ 理发师</div>
+        <div class="dlg-it">La permanente dura circa 3-4 mesi.</div>
+        <div class="dlg-zh">烫发大概维持3-4个月</div>
+      </div>
+      <div class="dlg-item">
+        <div class="dlg-role">✂️ 理发师</div>
+        <div class="dlg-it">Dobbiamo fare prima un trattamento nutriente, perché la stiratura può seccare i capelli.</div>
+        <div class="dlg-zh">我们得先做一个营养护理，因为拉直可能会让头发变干</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
