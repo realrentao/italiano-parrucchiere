@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>万能句型 · Frasi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Outfit', 'Noto Sans SC', sans-serif; background: linear-gradient(135deg, #faf0f6 0%, #f5e6f0 100%); min-height: 100vh; color: #2c2c2c; }
+    .back-btn { position: fixed; top: 20px; left: 20px; background: white; border: none; padding: 10px 20px; border-radius: 25px; font-size: 14px; color: #666; cursor: pointer; box-shadow: 0 2px 10px rgba(0,0,0,0.1); text-decoration: none; z-index: 100; transition: all 0.3s; }
+    .back-btn:hover { background: #ff9800; color: white; }
+    .container { max-width: 720px; margin: 0 auto; padding: 80px 20px 40px; }
+    h1 { font-family: 'Noto Serif SC', serif; font-size: 28px; font-weight: 700; margin-bottom: 8px; }
+    .subtitle { color: #666; margin-bottom: 30px; }
+    .section { background: white; border-radius: 16px; padding: 24px; margin-bottom: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+    .section h2 { font-size: 18px; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid; }
+    .section.green h2 { color: #4caf50; border-color: #c8e6c9; }
+    .section.yellow h2 { color: #ffc107; border-color: #fff9c4; }
+    .section.orange h2 { color: #ff9800; border-color: #ffe0b2; }
+    .section.red h2 { color: #f44336; border-color: #ffcdd2; }
+    .section.blue h2 { color: #2196f3; border-color: #bbdefb; }
+    .frasi { display: flex; flex-direction: column; gap: 10px; }
+    .frase { display: flex; justify-content: space-between; align-items: center; padding: 12px 16px; background: #f9f9f9; border-radius: 8px; }
+    .frase-it { font-weight: 600; color: #2c2c2c; }
+    .frase-zh { color: #888; font-size: 14px; }
+    @media (max-width: 600px) { .container { padding: 70px 16px 30px; } .frase { flex-direction: column; align-items: flex-start; gap: 4px; } }
+  </style>
+</head>
+<body>
+  <a href="index.html" class="back-btn">← 返回主页</a>
+  <div class="container">
+    <h1>⚡ 万能句型</h1>
+    <p class="subtitle">Frasi utili · 不用背语法，直接拿去用！</p>
+
+    <div class="section green">
+      <h2>🟢 顾客进门 / 开始服务</h2>
+      <div class="frasi">
+        <div class="frase"><span class="frase-it">Buongiorno! Si accomodi</span><span class="frase-zh">您好！请坐</span></div>
+        <div class="frase"><span class="frase-it">Allora, cosa facciamo oggi?</span><span class="frase-zh">那今天做什么？</span></div>
+        <div class="frase"><span class="frase-it">Ha l'appuntamento?</span><span class="frase-zh">有预约吗？</span></div>
+        <div class="frase"><span class="frase-it">Come si chiama?</span><span class="frase-zh">您叫什么名字？</span></div>
+      </div>
+    </div>
+
+    <div class="section yellow">
+      <h2>🟡 沟通需求</h2>
+      <div class="frasi">
+        <div class="frase"><span class="frase-it">Che colore ha in mente?</span><span class="frase-zh">想做什么颜色？</span></div>
+        <div class="frase"><span class="frase-it">Più chiaro o più scuro?</span><span class="frase-zh">更浅还是更深？</span></div>
+        <div class="frase"><span class="frase-it">Scalato o pari?</span><span class="frase-zh">有层次还是齐的？</span></div>
+        <div class="frase"><span class="frase-it">Fino a qui?</span><span class="frase-zh">到这儿？</span></div>
+        <div class="frase"><span class="frase-it">Così va bene?</span><span class="frase-zh">这样可以吗？</span></div>
+      </div>
+    </div>
+
+    <div class="section orange">
+      <h2>🟠 给出建议</h2>
+      <div class="frasi">
+        <div class="frase"><span class="frase-it">Ti consiglio di...</span><span class="frase-zh">我建议你...</span></div>
+        <div class="frase"><span class="frase-it">Le consiglio questa maschera</span><span class="frase-zh">我推荐这款发膜</span></div>
+        <div class="frase"><span class="frase-it">Possiamo fare una cosa più leggera</span><span class="frase-zh">我们可以做个温和点的</span></div>
+        <div class="frase"><span class="frase-it">Meglio non fare la decolorazione</span><span class="frase-zh">最好别漂色</span></div>
+      </div>
+    </div>
+
+    <div class="section red">
+      <h2>🔴 危机处理（保命必背！）</h2>
+      <div class="frasi">
+        <div class="frase"><span class="frase-it">Mi dispiace tanto.</span><span class="frase-zh">非常抱歉</span></div>
+        <div class="frase"><span class="frase-it">Cosa possiamo fare?</span><span class="frase-zh">我们能做什么？</span></div>
+        <div class="frase"><span class="frase-it">Possiamo aggiustare un po'</span><span class="frase-zh">我们可以调整一下</span></div>
+        <div class="frase"><span class="frase-it">Non posso fare, mi dispiace</span><span class="frase-zh">我做不了，抱歉</span></div>
+        <div class="frase"><span class="frase-it">Si figuri! L'importante è che Lei sia contenta</span><span class="frase-zh">没关系！重要的是您满意</span></div>
+      </div>
+    </div>
+
+    <div class="section blue">
+      <h2>💳 结账送客</h2>
+      <div class="frasi">
+        <div class="frase"><span class="frase-it">Il totale è [55] euro</span><span class="frase-zh">一共55欧</span></div>
+        <div class="frase"><span class="frase-it">Accettiamo carta e contanti</span><span class="frase-zh">刷卡和现金都可以</span></div>
+        <div class="frase"><span class="frase-it">Ecco lo scontrino</span><span class="frase-zh">这是小票</span></div>
+        <div class="frase"><span class="frase-it">Una firma qui</span><span class="frase-zh">请在这里签名</span></div>
+        <div class="frase"><span class="frase-it">Grazie a Lei! Buona giornata!</span><span class="frase-zh">谢谢您！祝您愉快！</span></div>
+        <div class="frase"><span class="frase-it">ArrivederLa!</span><span class="frase-zh">再见！</span></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
