@@ -24,7 +24,7 @@
 
     .header {
       text-align: center;
-      margin-bottom: 50px;
+      margin-bottom: 40px;
     }
 
     .logo {
@@ -54,7 +54,7 @@
 
     h1 {
       font-family: 'Noto Serif SC', serif;
-      font-size: 36px;
+      font-size: 32px;
       font-weight: 700;
       color: #2c2c2c;
       margin-bottom: 8px;
@@ -63,32 +63,89 @@
     .subtitle {
       font-size: 16px;
       color: #888;
-      font-weight: 400;
     }
 
-    .coming-soon {
+    .intro {
       background: white;
-      border-radius: 20px;
-      padding: 60px 40px;
-      text-align: center;
+      border-radius: 16px;
+      padding: 24px;
+      margin-bottom: 30px;
       box-shadow: 0 4px 20px rgba(0,0,0,0.08);
     }
 
-    .coming-icon {
-      font-size: 80px;
-      margin-bottom: 24px;
+    .intro p {
+      color: #666;
+      line-height: 1.8;
+      font-size: 14px;
     }
 
-    .coming-soon h2 {
-      font-family: 'Noto Serif SC', serif;
+    .cards {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 16px;
+      padding: 24px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      cursor: pointer;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+      transition: all 0.3s;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+    }
+
+    .card-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       font-size: 28px;
-      color: #2c2c2c;
-      margin-bottom: 12px;
+      flex-shrink: 0;
     }
 
-    .coming-soon p {
-      color: #888;
-      font-size: 16px;
+    .card-text h2 {
+      font-family: 'Noto Serif SC', serif;
+      font-size: 18px;
+      font-weight: 600;
+      color: #2c2c2c;
+      margin-bottom: 4px;
+    }
+
+    .card-text p {
+      font-size: 13px;
+      color: #999;
+    }
+
+    .card-arrow {
+      margin-left: auto;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: #f5f4f0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #ccc;
+      font-size: 14px;
+      flex-shrink: 0;
+      transition: all 0.3s;
+    }
+
+    .card:hover .card-arrow {
+      background: #e91e8c;
+      color: white;
     }
 
     .footer {
@@ -113,8 +170,10 @@
 
     @media (max-width: 600px) {
       .container { padding: 40px 16px 40px; }
-      h1 { font-size: 28px; }
-      .coming-soon { padding: 40px 20px; }
+      h1 { font-size: 26px; }
+      .card { padding: 20px; }
+      .card-icon { width: 48px; height: 48px; font-size: 24px; }
+      .card-text h2 { font-size: 16px; }
     }
   </style>
 </head>
@@ -122,15 +181,87 @@
   <div class="container">
     <div class="header">
       <div class="logo">💇</div>
-      <div class="badge">专题学习</div>
+      <div class="badge">意大利语美发专题</div>
       <h1>意大利语美发专题</h1>
       <p class="subtitle">Impara l'italiano del parrucchiere</p>
     </div>
 
-    <div class="coming-soon">
-      <div class="coming-icon">✂️</div>
-      <h2>即将上线</h2>
-      <p>美发店实用对话、术语词汇<br>敬请期待...</p>
+    <div class="intro">
+      <p>📖 <strong>使用指南</strong>：本手册包含核心词汇、场景对话、语法速成和万能句型。先学"听懂顾客说什么"，再学"自己该怎么回"。</p>
+    </div>
+
+    <div class="cards">
+      <a href="vocabolario.html" class="card">
+        <div class="card-icon" style="background: linear-gradient(135deg, #e91e8c, #c2185b);">📚</div>
+        <div class="card-text">
+          <h2>核心词汇速查</h2>
+          <p>人物场所 · 基本动作 · 发质描述</p>
+        </div>
+        <div class="card-arrow">→</div>
+      </a>
+
+      <a href="colori.html" class="card">
+        <div class="card-icon" style="background: linear-gradient(135deg, #9c27b0, #7b1fa2);">🎨</div>
+        <div class="card-text">
+          <h2>颜色大全</h2>
+          <p>基础色系 · 染发技术</p>
+        </div>
+        <div class="card-arrow">→</div>
+      </a>
+
+      <a href="permanente.html" class="card">
+        <div class="card-icon" style="background: linear-gradient(135deg, #673ab7, #512da8);">🌀</div>
+        <div class="card-text">
+          <h2>烫发与拉直</h2>
+          <p>永久烫 · 拉直技术 · 护理建议</p>
+        </div>
+        <div class="card-arrow">→</div>
+      </a>
+
+      <a href="prodotti.html" class="card">
+        <div class="card-icon" style="background: linear-gradient(135deg, #2196f3, #1976d2);">🧴</div>
+        <div class="card-text">
+          <h2>产品与工具</h2>
+          <p>洗发护发 · 定型产品 · 美发工具</p>
+        </div>
+        <div class="card-arrow">→</div>
+      </a>
+
+      <a href="dialoghi.html" class="card">
+        <div class="card-icon" style="background: linear-gradient(135deg, #ff5722, #e64a19);">💬</div>
+        <div class="card-text">
+          <h2>场景精华对话</h2>
+          <p>电话预约 · 到店服务 · 剪发染发 · 结账告别</p>
+        </div>
+        <div class="card-arrow">→</div>
+      </a>
+
+      <a href="grammatica.html" class="card">
+        <div class="card-icon" style="background: linear-gradient(135deg, #009688, #00796b);">📝</div>
+        <div class="card-text">
+          <h2>语法速成</h2>
+          <p>动词变位 · 肯定否定 · 疑问句型</p>
+        </div>
+        <div class="card-arrow">→</div>
+      </a>
+
+      <a href="frasi.html" class="card">
+        <div class="card-icon" style="background: linear-gradient(135deg, #ff9800, #f57c00);">⚡</div>
+        <div class="card-text">
+          <h2>万能句型</h2>
+          <p>进门服务 · 给出建议 · 危机处理 · 结账送客</p>
+        </div>
+        <div class="card-arrow">→</div>
+      </a>
+
+      <a href="sommario.html" class="card">
+        <div class="card-icon" style="background: linear-gradient(135deg, #4caf50, #388e3c);">🏆</div>
+        <div class="card-text">
+          <h2>实战小抄</h2>
+          <p>三连招速记 · 男士专区 · 儿童专区</p>
+        </div>
+        <div class="card-arrow">→</div>
+      </a>
     </div>
 
     <div class="footer">
