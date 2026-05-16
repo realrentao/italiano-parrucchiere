@@ -138,12 +138,17 @@
       speechSynthesis.cancel();
       const utterance = new SpeechSynthesisUtterance(text);
       utterance.lang = 'it-IT';
-      utterance.rate = 0.85;
+      utterance.rate = 0.8;
       utterance.pitch = 1;
-      // 尝试选择意大利语语音
+      utterance.volume = 1;
+      // 优先选择名称包含"Italian"或"Italia"的语音
       const voices = speechSynthesis.getVoices();
-      const itVoice = voices.find(v => v.lang.startsWith('it')) || voices[0];
-      if (itVoice) utterance.voice = itVoice;
+      const itVoice = voices.find(v => 
+        v.lang.startsWith('it') && (v.name.includes('Italian') || v.name.includes('Italia') || v.name.includes('italiano'))
+      ) || voices.find(v => v.lang.startsWith('it')) || voices[0];
+      if (itVoice) {
+        utterance.voice = itVoice;
+      }
       speechSynthesis.speak(utterance);
     }
 
