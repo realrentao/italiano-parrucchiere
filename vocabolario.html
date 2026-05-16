@@ -18,6 +18,7 @@
     .vocab-section { background: white; border-radius: 16px; padding: 20px; margin-bottom: 16px; box-shadow: 0 2px 10px rgba(0,0,0,0.06); }
     .vocab-item { display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid #f5f5f5; }
     .vocab-item:last-child { border-bottom: none; }
+    .vocab-num { display: inline-flex; align-items: center; justify-content: center; min-width: 28px; height: 28px; background: linear-gradient(135deg, #e91e8c, #c2185b); color: white; border-radius: 50%; font-size: 12px; font-weight: 700; margin-right: 8px; flex-shrink: 0; }
     .vocab-left { display: flex; align-items: center; gap: 12px; flex: 1; }
     .vocab-it { font-weight: 600; color: #2c2c2c; font-size: 16px; cursor: pointer; transition: color 0.2s; }
     .vocab-it:hover { color: #e91e8c; }
@@ -47,14 +48,14 @@
 
     <h2>👥 人物与场所</h2>
     <div class="vocab-section">
-      <div class="vocab-item"><div class="vocab-left"><button class="speaker-btn" data-text="Il parrucchiere" title="发音">🔊</button><span class="vocab-it" data-text="Il parrucchiere">Il parrucchiere / La parrucchiera</span></div><span class="vocab-zh">理发师（男/女）</span></div>
-      <div class="vocab-item"><div class="vocab-left"><button class="speaker-btn" data-text="Il barbiere" title="发音">🔊</button><span class="vocab-it" data-text="Il barbiere">Il barbiere</span></div><span class="vocab-zh">男发理发师/剃须师傅</span></div>
-      <div class="vocab-item"><div class="vocab-left"><button class="speaker-btn" data-text="Il salone" title="发音">🔊</button><span class="vocab-it" data-text="Il salone">Il salone</span></div><span class="vocab-zh">发廊/美发沙龙</span></div>
-      <div class="vocab-item"><div class="vocab-left"><button class="speaker-btn" data-text="La cliente" title="发音">🔊</button><span class="vocab-it" data-text="La cliente">La cliente / Il cliente</span></div><span class="vocab-zh">女/男顾客</span></div>
-      <div class="vocab-item"><div class="vocab-left"><button class="speaker-btn" data-text="Il lavandino" title="发音">🔊</button><span class="vocab-it" data-text="Il lavandino">Il lavandino</span></div><span class="vocab-zh">洗头池</span></div>
-      <div class="vocab-item"><div class="vocab-left"><button class="speaker-btn" data-text="Lo specchio" title="发音">🔊</button><span class="vocab-it" data-text="Lo specchio">Lo specchio</span></div><span class="vocab-zh">镜子</span></div>
-      <div class="vocab-item"><div class="vocab-left"><button class="speaker-btn" data-text="La poltrona" title="发音">🔊</button><span class="vocab-it" data-text="La poltrona">La poltrona</span></div><span class="vocab-zh">理发椅</span></div>
-      <div class="vocab-item"><div class="vocab-left"><button class="speaker-btn" data-text="Il bancone" title="发音">🔊</button><span class="vocab-it" data-text="Il bancone">Il bancone / La cassa</span></div><span class="vocab-zh">收银台</span></div>
+      <div class="vocab-item"><div class="vocab-left"><span class="vocab-num">1</span><button class="speaker-btn" data-text="Il parrucchiere" title="发音">🔊</button><span class="vocab-it" data-text="Il parrucchiere">Il parrucchiere / La parrucchiera</span></div><span class="vocab-zh">理发师（男/女）</span></div>
+      <div class="vocab-item"><div class="vocab-left"><span class="vocab-num">2</span><button class="speaker-btn" data-text="Il barbiere" title="发音">🔊</button><span class="vocab-it" data-text="Il barbiere">Il barbiere</span></div><span class="vocab-zh">男发理发师/剃须师傅</span></div>
+      <div class="vocab-item"><div class="vocab-left"><span class="vocab-num">3</span><button class="speaker-btn" data-text="Il salone" title="发音">🔊</button><span class="vocab-it" data-text="Il salone">Il salone</span></div><span class="vocab-zh">发廊/美发沙龙</span></div>
+      <div class="vocab-item"><div class="vocab-left"><span class="vocab-num">4</span><button class="speaker-btn" data-text="La cliente" title="发音">🔊</button><span class="vocab-it" data-text="La cliente">La cliente / Il cliente</span></div><span class="vocab-zh">女/男顾客</span></div>
+      <div class="vocab-item"><div class="vocab-left"><span class="vocab-num">5</span><button class="speaker-btn" data-text="Il lavandino" title="发音">🔊</button><span class="vocab-it" data-text="Il lavandino">Il lavandino</span></div><span class="vocab-zh">洗头池</span></div>
+      <div class="vocab-item"><div class="vocab-left"><span class="vocab-num">6</span><button class="speaker-btn" data-text="Lo specchio" title="发音">🔊</button><span class="vocab-it" data-text="Lo specchio">Lo specchio</span></div><span class="vocab-zh">镜子</span></div>
+      <div class="vocab-item"><div class="vocab-left"><span class="vocab-num">7</span><button class="speaker-btn" data-text="La poltrona" title="发音">🔊</button><span class="vocab-it" data-text="La poltrona">La poltrona</span></div><span class="vocab-zh">理发椅</span></div>
+      <div class="vocab-item"><div class="vocab-left"><span class="vocab-num">8</span><button class="speaker-btn" data-text="Il bancone" title="发音">🔊</button><span class="vocab-it" data-text="Il bancone">Il bancone / La cassa</span></div><span class="vocab-zh">收银台</span></div>
     </div>
     <div class="grammar">
       <div class="grammar-title">⚡ 语法小贴士：定冠词 Il / La / L' / Lo</div>
@@ -69,18 +70,18 @@
 
     <h2>✂️ 基本动作与服务</h2>
     <div class="vocab-section">
-      <div class="vocab-item"><div class="vocab-left"><button class="speaker-btn" data-text="Tagliare" title="发音">🔊</button><span class="vocab-it" data-text="Tagliare">Tagliare / Il taglio</span></div><span class="vocab-zh">剪 / 剪发</span></div>
-      <div class="vocab-item"><div class="vocab-left"><button class="speaker-btn" data-text="Dare una spuntatina" title="发音">🔊</button><span class="vocab-it" data-text="Dare una spuntatina">Dare una spuntatina</span></div><span class="vocab-zh">修剪（发尾）</span></div>
-      <div class="vocab-item"><div class="vocab-left"><button class="speaker-btn" data-text="Accorciare" title="发音">🔊</button><span class="vocab-it" data-text="Accorciare">Accorciare</span></div><span class="vocab-zh">剪短</span></div>
-      <div class="vocab-item"><div class="vocab-left"><button class="speaker-btn" data-text="Sfoltire" title="发音">🔊</button><span class="vocab-it" data-text="Sfoltire">Sfoltire</span></div><span class="vocab-zh">打薄</span></div>
-      <div class="vocab-item"><div class="vocab-left"><button class="speaker-btn" data-text="Scalare" title="发音">🔊</button><span class="vocab-it" data-text="Scalare">Scalare / Sfilare</span></div><span class="vocab-zh">剪层次 / 削薄</span></div>
-      <div class="vocab-item"><div class="vocab-left"><button class="speaker-btn" data-text="Fare lo shampoo" title="发音">🔊</button><span class="vocab-it" data-text="Fare lo shampoo">Fare lo shampoo</span></div><span class="vocab-zh">洗头</span></div>
-      <div class="vocab-item"><div class="vocab-left"><button class="speaker-btn" data-text="Fare la piega" title="发音">🔊</button><span class="vocab-it" data-text="Fare la piega">Fare la piega</span></div><span class="vocab-zh">吹干造型</span></div>
-      <div class="vocab-item"><div class="vocab-left"><button class="speaker-btn" data-text="Tingere" title="发音">🔊</button><span class="vocab-it" data-text="Tingere">Tingere</span></div><span class="vocab-zh">染</span></div>
-      <div class="vocab-item"><div class="vocab-left"><button class="speaker-btn" data-text="Decolorare" title="发音">🔊</button><span class="vocab-it" data-text="Decolorare">Decolorare</span></div><span class="vocab-zh">漂/漂色</span></div>
-      <div class="vocab-item"><div class="vocab-left"><button class="speaker-btn" data-text="Fare la permanente" title="发音">🔊</button><span class="vocab-it" data-text="Fare la permanente">Fare la permanente</span></div><span class="vocab-zh">烫卷</span></div>
-      <div class="vocab-item"><div class="vocab-left"><button class="speaker-btn" data-text="Stirare" title="发音">🔊</button><span class="vocab-it" data-text="Stirare">Stirare / Stiratura</span></div><span class="vocab-zh">拉直</span></div>
-      <div class="vocab-item"><div class="vocab-left"><button class="speaker-btn" data-text="Trattamento" title="发音">🔊</button><span class="vocab-it" data-text="Trattamento">Trattamento</span></div><span class="vocab-zh">护理</span></div>
+      <div class="vocab-item"><div class="vocab-left"><span class="vocab-num">9</span><button class="speaker-btn" data-text="Tagliare" title="发音">🔊</button><span class="vocab-it" data-text="Tagliare">Tagliare / Il taglio</span></div><span class="vocab-zh">剪 / 剪发</span></div>
+      <div class="vocab-item"><div class="vocab-left"><span class="vocab-num">10</span><button class="speaker-btn" data-text="Dare una spuntatina" title="发音">🔊</button><span class="vocab-it" data-text="Dare una spuntatina">Dare una spuntatina</span></div><span class="vocab-zh">修剪（发尾）</span></div>
+      <div class="vocab-item"><div class="vocab-left"><span class="vocab-num">11</span><button class="speaker-btn" data-text="Accorciare" title="发音">🔊</button><span class="vocab-it" data-text="Accorciare">Accorciare</span></div><span class="vocab-zh">剪短</span></div>
+      <div class="vocab-item"><div class="vocab-left"><span class="vocab-num">12</span><button class="speaker-btn" data-text="Sfoltire" title="发音">🔊</button><span class="vocab-it" data-text="Sfoltire">Sfoltire</span></div><span class="vocab-zh">打薄</span></div>
+      <div class="vocab-item"><div class="vocab-left"><span class="vocab-num">13</span><button class="speaker-btn" data-text="Scalare" title="发音">🔊</button><span class="vocab-it" data-text="Scalare">Scalare / Sfilare</span></div><span class="vocab-zh">剪层次 / 削薄</span></div>
+      <div class="vocab-item"><div class="vocab-left"><span class="vocab-num">14</span><button class="speaker-btn" data-text="Fare lo shampoo" title="发音">🔊</button><span class="vocab-it" data-text="Fare lo shampoo">Fare lo shampoo</span></div><span class="vocab-zh">洗头</span></div>
+      <div class="vocab-item"><div class="vocab-left"><span class="vocab-num">15</span><button class="speaker-btn" data-text="Fare la piega" title="发音">🔊</button><span class="vocab-it" data-text="Fare la piega">Fare la piega</span></div><span class="vocab-zh">吹干造型</span></div>
+      <div class="vocab-item"><div class="vocab-left"><span class="vocab-num">16</span><button class="speaker-btn" data-text="Tingere" title="发音">🔊</button><span class="vocab-it" data-text="Tingere">Tingere</span></div><span class="vocab-zh">染</span></div>
+      <div class="vocab-item"><div class="vocab-left"><span class="vocab-num">17</span><button class="speaker-btn" data-text="Decolorare" title="发音">🔊</button><span class="vocab-it" data-text="Decolorare">Decolorare</span></div><span class="vocab-zh">漂/漂色</span></div>
+      <div class="vocab-item"><div class="vocab-left"><span class="vocab-num">18</span><button class="speaker-btn" data-text="Fare la permanente" title="发音">🔊</button><span class="vocab-it" data-text="Fare la permanente">Fare la permanente</span></div><span class="vocab-zh">烫卷</span></div>
+      <div class="vocab-item"><div class="vocab-left"><span class="vocab-num">19</span><button class="speaker-btn" data-text="Stirare" title="发音">🔊</button><span class="vocab-it" data-text="Stirare">Stirare / Stiratura</span></div><span class="vocab-zh">拉直</span></div>
+      <div class="vocab-item"><div class="vocab-left"><span class="vocab-num">20</span><button class="speaker-btn" data-text="Trattamento" title="发音">🔊</button><span class="vocab-it" data-text="Trattamento">Trattamento</span></div><span class="vocab-zh">护理</span></div>
     </div>
     <div class="tip">
       <div class="tip-title">💡 记忆口诀</div>
@@ -92,18 +93,18 @@
 
     <h2>💇 发质与状况描述</h2>
     <div class="vocab-section">
-      <div class="vocab-item"><div class="vocab-left"><button class="speaker-btn" data-text="I capelli sono fini" title="发音">🔊</button><span class="vocab-it" data-text="I capelli sono fini">I capelli sono fini / sottili</span></div><span class="vocab-zh">头发很细</span></div>
-      <div class="vocab-item"><div class="vocab-left"><button class="speaker-btn" data-text="I capelli sono spessi" title="发音">🔊</button><span class="vocab-it" data-text="I capelli sono spessi">I capelli sono spessi / folti</span></div><span class="vocab-zh">头发很厚/很多</span></div>
-      <div class="vocab-item"><div class="vocab-left"><button class="speaker-btn" data-text="I capelli sono grassi" title="发音">🔊</button><span class="vocab-it" data-text="I capelli sono grassi">I capelli sono grassi</span></div><span class="vocab-zh">头发油</span></div>
-      <div class="vocab-item"><div class="vocab-left"><button class="speaker-btn" data-text="I capelli sono secchi" title="发音">🔊</button><span class="vocab-it" data-text="I capelli sono secchi">I capelli sono secchi</span></div><span class="vocab-zh">头发干</span></div>
-      <div class="vocab-item"><div class="vocab-left"><button class="speaker-btn" data-text="I capelli sono crespi" title="发音">🔊</button><span class="vocab-it" data-text="I capelli sono crespi">I capelli sono crespi</span></div><span class="vocab-zh">头发毛躁</span></div>
-      <div class="vocab-item"><div class="vocab-left"><button class="speaker-btn" data-text="I capelli sono danneggiati" title="发音">🔊</button><span class="vocab-it" data-text="I capelli sono danneggiati">I capelli sono danneggiati</span></div><span class="vocab-zh">头发受损</span></div>
-      <div class="vocab-item"><div class="vocab-left"><button class="speaker-btn" data-text="Doppie punte" title="发音">🔊</button><span class="vocab-it" data-text="Doppie punte">Doppie punte</span></div><span class="vocab-zh">分叉</span></div>
-      <div class="vocab-item"><div class="vocab-left"><button class="speaker-btn" data-text="Forfora" title="发音">🔊</button><span class="vocab-it" data-text="Forfora">Forfora</span></div><span class="vocab-zh">头皮屑</span></div>
-      <div class="vocab-item"><div class="vocab-left"><button class="speaker-btn" data-text="La ricrescita" title="发音">🔊</button><span class="vocab-it" data-text="La ricrescita">La ricrescita</span></div><span class="vocab-zh">新生发根</span></div>
-      <div class="vocab-item"><div class="vocab-left"><button class="speaker-btn" data-text="La radice" title="发音">🔊</button><span class="vocab-it" data-text="La radice">La radice</span></div><span class="vocab-zh">发根</span></div>
-      <div class="vocab-item"><div class="vocab-left"><button class="speaker-btn" data-text="La lunghezza" title="发音">🔊</button><span class="vocab-it" data-text="La lunghezza">La lunghezza</span></div><span class="vocab-zh">发干（中间段）</span></div>
-      <div class="vocab-item"><div class="vocab-left"><button class="speaker-btn" data-text="Le punte" title="发音">🔊</button><span class="vocab-it" data-text="Le punte">Le punte</span></div><span class="vocab-zh">发尾</span></div>
+      <div class="vocab-item"><div class="vocab-left"><span class="vocab-num">21</span><button class="speaker-btn" data-text="I capelli sono fini" title="发音">🔊</button><span class="vocab-it" data-text="I capelli sono fini">I capelli sono fini / sottili</span></div><span class="vocab-zh">头发很细</span></div>
+      <div class="vocab-item"><div class="vocab-left"><span class="vocab-num">22</span><button class="speaker-btn" data-text="I capelli sono spessi" title="发音">🔊</button><span class="vocab-it" data-text="I capelli sono spessi">I capelli sono spessi / folti</span></div><span class="vocab-zh">头发很厚/很多</span></div>
+      <div class="vocab-item"><div class="vocab-left"><span class="vocab-num">23</span><button class="speaker-btn" data-text="I capelli sono grassi" title="发音">🔊</button><span class="vocab-it" data-text="I capelli sono grassi">I capelli sono grassi</span></div><span class="vocab-zh">头发油</span></div>
+      <div class="vocab-item"><div class="vocab-left"><span class="vocab-num">24</span><button class="speaker-btn" data-text="I capelli sono secchi" title="发音">🔊</button><span class="vocab-it" data-text="I capelli sono secchi">I capelli sono secchi</span></div><span class="vocab-zh">头发干</span></div>
+      <div class="vocab-item"><div class="vocab-left"><span class="vocab-num">25</span><button class="speaker-btn" data-text="I capelli sono crespi" title="发音">🔊</button><span class="vocab-it" data-text="I capelli sono crespi">I capelli sono crespi</span></div><span class="vocab-zh">头发毛躁</span></div>
+      <div class="vocab-item"><div class="vocab-left"><span class="vocab-num">26</span><button class="speaker-btn" data-text="I capelli sono danneggiati" title="发音">🔊</button><span class="vocab-it" data-text="I capelli sono danneggiati">I capelli sono danneggiati</span></div><span class="vocab-zh">头发受损</span></div>
+      <div class="vocab-item"><div class="vocab-left"><span class="vocab-num">27</span><button class="speaker-btn" data-text="Doppie punte" title="发音">🔊</button><span class="vocab-it" data-text="Doppie punte">Doppie punte</span></div><span class="vocab-zh">分叉</span></div>
+      <div class="vocab-item"><div class="vocab-left"><span class="vocab-num">28</span><button class="speaker-btn" data-text="Forfora" title="发音">🔊</button><span class="vocab-it" data-text="Forfora">Forfora</span></div><span class="vocab-zh">头皮屑</span></div>
+      <div class="vocab-item"><div class="vocab-left"><span class="vocab-num">29</span><button class="speaker-btn" data-text="La ricrescita" title="发音">🔊</button><span class="vocab-it" data-text="La ricrescita">La ricrescita</span></div><span class="vocab-zh">新生发根</span></div>
+      <div class="vocab-item"><div class="vocab-left"><span class="vocab-num">30</span><button class="speaker-btn" data-text="La radice" title="发音">🔊</button><span class="vocab-it" data-text="La radice">La radice</span></div><span class="vocab-zh">发根</span></div>
+      <div class="vocab-item"><div class="vocab-left"><span class="vocab-num">31</span><button class="speaker-btn" data-text="La lunghezza" title="发音">🔊</button><span class="vocab-it" data-text="La lunghezza">La lunghezza</span></div><span class="vocab-zh">发干（中间段）</span></div>
+      <div class="vocab-item"><div class="vocab-left"><span class="vocab-num">32</span><button class="speaker-btn" data-text="Le punte" title="发音">🔊</button><span class="vocab-it" data-text="Le punte">Le punte</span></div><span class="vocab-zh">发尾</span></div>
     </div>
     <div class="grammar">
       <div class="grammar-title">⚡ 句型公式：I capelli sono + 形容词</div>
