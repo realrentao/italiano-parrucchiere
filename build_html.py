@@ -259,6 +259,8 @@ function renderContent() {
   if (html.indexOf('entry-card') === -1) { html = '<div class="null-state"><div class="null-icon">🔍</div><p>没有找到匹配 "' + escHtml(searchQuery) + '" 的内容</p></div>'; }
   main.innerHTML = html;
   document.querySelectorAll('.play-btn[data-audio-id]').forEach(btn => { btn.addEventListener('click', function(e) { e.stopPropagation(); playAudio(this); }); });
+  // Preload this section's audio so the first tap plays instantly.
+  prefetchSectionAudio();
 }
 
 function renderDialogEntries(entries) {
@@ -293,6 +295,33 @@ function renderEntry(e) {
   return html;
 }
 
+// Stable version param: lets the browser cache audio across replays/sessions.
+// Bump this constant when you replace any audio file, so clients re-fetch.
+const AUDIO_VER = '1';
+function audioUrl(aid) { return 'audio/' + aid + '.mp3?v=' + AUDIO_VER; }
+function getAudio(aid) {
+  if (!audioCache[aid]) {
+    const a = new Audio();
+    a.dataset.audioId = aid;
+    a.preload = 'auto';
+    a.src = audioUrl(aid);
+    a.addEventListener('ended', function() {
+      if (currentBtn && currentBtn.dataset.audioId === aid) { currentBtn.textContent = '▶'; currentBtn.classList.remove('playing'); }
+      if (currentAudio && currentAudio.dataset.audioId === aid) { currentAudio = null; currentBtn = null; }
+    });
+    audioCache[aid] = a;
+  }
+  return audioCache[aid];
+}
+// Preload the active section's audio right after it renders, so the first tap is instant.
+function prefetchSectionAudio() {
+  const sec = SECTIONS[activeSection];
+  if (!sec) return;
+  const ids = [];
+  (sec.subsections || []).forEach(s => s.entries.forEach(e => { if (hasAudio(e)) ids.push(e.id); }));
+  (sec.entries || []).forEach(e => { if (hasAudio(e)) ids.push(e.id); });
+  ids.forEach(function(id) { try { getAudio(id).load(); } catch (e) {} });
+}
 function playAudio(btn) {
   const aid = btn.dataset.audioId;
   const entry = ALL_ENTRIES.find(e => e.id === aid);
@@ -302,18 +331,8 @@ function playAudio(btn) {
     currentAudio.pause(); currentAudio.currentTime = 0;
     if (currentBtn) { currentBtn.textContent = '▶'; currentBtn.classList.remove('playing'); }
   }
-  const ap = 'audio/' + aid + '.mp3?v=' + Date.now();
-  if (!audioCache[aid]) {
-    const a = new Audio();
-    a.dataset.audioId = aid;
-    a.preload = 'auto';
-    a.addEventListener('ended', function() { if (currentBtn) { currentBtn.textContent = '▶'; currentBtn.classList.remove('playing'); } currentAudio = null; currentBtn = null; });
-    audioCache[aid] = a;
-  }
-  const a = audioCache[aid];
-  if (a.src !== ap) { a.src = ap; a.load(); }
+  const a = getAudio(aid);
   a.currentTime = 0;
-  currentAudio = a; currentBtn = btn;
   // Play immediately within the user gesture so it also works on iOS/Safari/mobile.
   const markPlaying = function() { btn.textContent = '⏸'; btn.classList.add('playing'); currentAudio = a; currentBtn = btn; };
   const pr = a.play();
