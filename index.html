@@ -285,18 +285,9 @@ function playAudio(btn) {
   const aid = btn.dataset.audioId;
   const entry = ALL_ENTRIES.find(e => e.id === aid);
   if (!entry) return;
-  // Pause if this audio is currently playing
-  if (currentAudio && !currentAudio.paused && currentAudio.dataset.audioId === aid) {
-    currentAudio.pause();
-    currentAudio.currentTime = 0;
-    if (currentBtn) { currentBtn.textContent = '▶'; currentBtn.classList.remove('playing'); }
-    currentAudio = null; currentBtn = null;
-    return;
-  }
-  // Stop any other playing audio
   if (currentAudio && !currentAudio.paused) {
-    currentAudio.pause();
-    currentAudio.currentTime = 0;
+    if (currentAudio.dataset.audioId === aid) { currentAudio.pause(); currentAudio.currentTime = 0; if (currentBtn) { currentBtn.textContent = '▶'; currentBtn.classList.remove('playing'); } currentAudio = null; currentBtn = null; return; }
+    currentAudio.pause(); currentAudio.currentTime = 0;
     if (currentBtn) { currentBtn.textContent = '▶'; currentBtn.classList.remove('playing'); }
   }
   const ap = 'audio/' + aid + '.mp3?v=' + Date.now();
@@ -310,36 +301,28 @@ function playAudio(btn) {
   const a = audioCache[aid];
   if (a.src !== ap) { a.src = ap; a.load(); }
   a.currentTime = 0;
-  // If already loading this button, ignore repeat clicks (no intermediate effect)
-  if (btn.dataset.loading === '1') return;
-  const startPlay = () => {
-    btn.dataset.loading = '';
-    a.play().then(() => {
-      btn.textContent = '⏸';
-      btn.classList.add('playing');
-      currentAudio = a; currentBtn = btn;
-    }).catch(function(err) {
+  currentAudio = a; currentBtn = btn;
+  // Play immediately within the user gesture so it also works on iOS/Safari/mobile.
+  const markPlaying = function() { btn.textContent = '⏸'; btn.classList.add('playing'); currentAudio = a; currentBtn = btn; };
+  const pr = a.play();
+  if (pr && pr.then) {
+    pr.then(markPlaying).catch(function(err) {
       console.warn('Play rejected:', err);
-      btn.textContent = '⚠';
-      btn.style.color = 'var(--red)';
-      setTimeout(() => { btn.textContent = '▶'; btn.style.color = ''; }, 2000);
+      let retried = false;
+      const retry = function() {
+        if (retried) return; retried = true;
+        const p2 = a.play();
+        if (p2 && p2.then) p2.then(markPlaying).catch(showPlayError);
+      };
+      a.addEventListener('canplay', retry, { once: true });
+      a.addEventListener('error', showPlayError, { once: true });
     });
-  };
-  if (a.readyState >= 3) {
-    // Already buffered -> play immediately and show green pause
-    startPlay();
-  } else {
-    // Loading: keep button unchanged (▶), no red X / no effect until it can actually play
-    btn.dataset.loading = '1';
-    a.addEventListener('canplay', startPlay, { once: true });
-    a.addEventListener('error', function() {
-      btn.dataset.loading = '';
-      btn.textContent = '⚠';
-      btn.style.color = 'var(--red)';
-      setTimeout(() => { btn.textContent = '▶'; btn.style.color = ''; }, 2000);
-      currentAudio = null; currentBtn = null;
-    }, { once: true });
   }
+}
+function showPlayError() {
+  if (currentBtn) { currentBtn.textContent = '⚠'; currentBtn.style.color = 'var(--red)'; }
+  setTimeout(function() { if (currentBtn) { currentBtn.textContent = '▶'; currentBtn.style.color = ''; } }, 2500);
+  currentAudio = null; currentBtn = null;
 }
 
 function matchesSearch(e) { if (!searchQuery) return true; const q = searchQuery.toLowerCase(); return e.ita.toLowerCase().includes(q) || e.chn.toLowerCase().includes(q) || (e.extra && e.extra.toLowerCase().includes(q)); }

@@ -308,14 +308,33 @@ function playAudio(btn) {
     a.dataset.audioId = aid;
     a.preload = 'auto';
     a.addEventListener('ended', function() { if (currentBtn) { currentBtn.textContent = '▶'; currentBtn.classList.remove('playing'); } currentAudio = null; currentBtn = null; });
-    a.addEventListener('error', function(e) { console.warn('Audio error:', e); btn.textContent = '⚠'; btn.style.color = 'var(--red)'; setTimeout(() => { btn.textContent = '▶'; btn.style.color = ''; }, 2000); if (currentBtn) { currentBtn.textContent = '▶'; currentBtn.classList.remove('playing'); } currentAudio = null; currentBtn = null; });
-    a.addEventListener('canplaythrough', function() { if (this._pendingPlay) { this.play().catch(console.warn); delete this._pendingPlay; } });
     audioCache[aid] = a;
   }
   const a = audioCache[aid];
   if (a.src !== ap) { a.src = ap; a.load(); }
   a.currentTime = 0;
-  a.play().then(() => { btn.textContent = '⏸'; btn.classList.add('playing'); currentAudio = a; currentBtn = btn; }).catch(function(err) { btn.textContent = '⚠'; btn.style.color = 'var(--red)'; setTimeout(() => { btn.textContent = '▶'; btn.style.color = ''; }, 2000); });
+  currentAudio = a; currentBtn = btn;
+  // Play immediately within the user gesture so it also works on iOS/Safari/mobile.
+  const markPlaying = function() { btn.textContent = '⏸'; btn.classList.add('playing'); currentAudio = a; currentBtn = btn; };
+  const pr = a.play();
+  if (pr && pr.then) {
+    pr.then(markPlaying).catch(function(err) {
+      console.warn('Play rejected:', err);
+      let retried = false;
+      const retry = function() {
+        if (retried) return; retried = true;
+        const p2 = a.play();
+        if (p2 && p2.then) p2.then(markPlaying).catch(showPlayError);
+      };
+      a.addEventListener('canplay', retry, { once: true });
+      a.addEventListener('error', showPlayError, { once: true });
+    });
+  }
+}
+function showPlayError() {
+  if (currentBtn) { currentBtn.textContent = '⚠'; currentBtn.style.color = 'var(--red)'; }
+  setTimeout(function() { if (currentBtn) { currentBtn.textContent = '▶'; currentBtn.style.color = ''; } }, 2500);
+  currentAudio = null; currentBtn = null;
 }
 
 function matchesSearch(e) { if (!searchQuery) return true; const q = searchQuery.toLowerCase(); return e.ita.toLowerCase().includes(q) || e.chn.toLowerCase().includes(q) || (e.extra && e.extra.toLowerCase().includes(q)); }
