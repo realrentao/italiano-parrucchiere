@@ -285,9 +285,18 @@ function playAudio(btn) {
   const aid = btn.dataset.audioId;
   const entry = ALL_ENTRIES.find(e => e.id === aid);
   if (!entry) return;
+  // Pause if this audio is currently playing
+  if (currentAudio && !currentAudio.paused && currentAudio.dataset.audioId === aid) {
+    currentAudio.pause();
+    currentAudio.currentTime = 0;
+    if (currentBtn) { currentBtn.textContent = '▶'; currentBtn.classList.remove('playing'); }
+    currentAudio = null; currentBtn = null;
+    return;
+  }
+  // Stop any other playing audio
   if (currentAudio && !currentAudio.paused) {
-    if (currentAudio.dataset.audioId === aid) { currentAudio.pause(); currentAudio.currentTime = 0; if (currentBtn) { currentBtn.textContent = '▶'; currentBtn.classList.remove('playing'); } currentAudio = null; currentBtn = null; return; }
-    currentAudio.pause(); currentAudio.currentTime = 0;
+    currentAudio.pause();
+    currentAudio.currentTime = 0;
     if (currentBtn) { currentBtn.textContent = '▶'; currentBtn.classList.remove('playing'); }
   }
   const ap = 'audio/' + aid + '.mp3?v=' + Date.now();
@@ -296,14 +305,41 @@ function playAudio(btn) {
     a.dataset.audioId = aid;
     a.preload = 'auto';
     a.addEventListener('ended', function() { if (currentBtn) { currentBtn.textContent = '▶'; currentBtn.classList.remove('playing'); } currentAudio = null; currentBtn = null; });
-    a.addEventListener('error', function(e) { console.warn('Audio error:', e); btn.textContent = '⚠'; btn.style.color = 'var(--red)'; setTimeout(() => { btn.textContent = '▶'; btn.style.color = ''; }, 2000); if (currentBtn) { currentBtn.textContent = '▶'; currentBtn.classList.remove('playing'); } currentAudio = null; currentBtn = null; });
-    a.addEventListener('canplaythrough', function() { if (this._pendingPlay) { this.play().catch(console.warn); delete this._pendingPlay; } });
     audioCache[aid] = a;
   }
   const a = audioCache[aid];
   if (a.src !== ap) { a.src = ap; a.load(); }
   a.currentTime = 0;
-  a.play().then(() => { btn.textContent = '⏸'; btn.classList.add('playing'); currentAudio = a; currentBtn = btn; }).catch(function(err) { btn.textContent = '⚠'; btn.style.color = 'var(--red)'; setTimeout(() => { btn.textContent = '▶'; btn.style.color = ''; }, 2000); });
+  // If already loading this button, ignore repeat clicks (no intermediate effect)
+  if (btn.dataset.loading === '1') return;
+  const startPlay = () => {
+    btn.dataset.loading = '';
+    a.play().then(() => {
+      btn.textContent = '⏸';
+      btn.classList.add('playing');
+      currentAudio = a; currentBtn = btn;
+    }).catch(function(err) {
+      console.warn('Play rejected:', err);
+      btn.textContent = '⚠';
+      btn.style.color = 'var(--red)';
+      setTimeout(() => { btn.textContent = '▶'; btn.style.color = ''; }, 2000);
+    });
+  };
+  if (a.readyState >= 3) {
+    // Already buffered -> play immediately and show green pause
+    startPlay();
+  } else {
+    // Loading: keep button unchanged (▶), no red X / no effect until it can actually play
+    btn.dataset.loading = '1';
+    a.addEventListener('canplay', startPlay, { once: true });
+    a.addEventListener('error', function() {
+      btn.dataset.loading = '';
+      btn.textContent = '⚠';
+      btn.style.color = 'var(--red)';
+      setTimeout(() => { btn.textContent = '▶'; btn.style.color = ''; }, 2000);
+      currentAudio = null; currentBtn = null;
+    }, { once: true });
+  }
 }
 
 function matchesSearch(e) { if (!searchQuery) return true; const q = searchQuery.toLowerCase(); return e.ita.toLowerCase().includes(q) || e.chn.toLowerCase().includes(q) || (e.extra && e.extra.toLowerCase().includes(q)); }
