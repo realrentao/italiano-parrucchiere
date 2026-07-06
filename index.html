@@ -292,14 +292,18 @@ function playAudio(btn) {
   }
   const ap = 'audio/' + aid + '.mp3?v=' + Date.now();
   if (!audioCache[aid]) {
-    const a = new Audio(ap);
-    a.dataset.audioId = aid; a.preload = 'none';
+    const a = new Audio();
+    a.dataset.audioId = aid;
+    a.preload = 'auto';
     a.addEventListener('ended', function() { if (currentBtn) { currentBtn.textContent = '▶'; currentBtn.classList.remove('playing'); } currentAudio = null; currentBtn = null; });
-    a.addEventListener('error', function() { btn.textContent = '⚠'; btn.style.color = 'var(--red)'; setTimeout(() => { btn.textContent = '▶'; btn.style.color = ''; }, 2000); if (currentBtn) { currentBtn.textContent = '▶'; currentBtn.classList.remove('playing'); } currentAudio = null; currentBtn = null; });
+    a.addEventListener('error', function(e) { console.warn('Audio error:', e); btn.textContent = '⚠'; btn.style.color = 'var(--red)'; setTimeout(() => { btn.textContent = '▶'; btn.style.color = ''; }, 2000); if (currentBtn) { currentBtn.textContent = '▶'; currentBtn.classList.remove('playing'); } currentAudio = null; currentBtn = null; });
+    a.addEventListener('canplaythrough', function() { if (this._pendingPlay) { this.play().catch(console.warn); delete this._pendingPlay; } });
     audioCache[aid] = a;
   }
-  const a = audioCache[aid]; a.currentTime = 0;
-  a.play().then(() => { btn.textContent = '⏸'; btn.classList.add('playing'); currentAudio = a; currentBtn = btn; }).catch(err => {});
+  const a = audioCache[aid];
+  if (a.src !== ap) { a.src = ap; a.load(); }
+  a.currentTime = 0;
+  a.play().then(() => { btn.textContent = '⏸'; btn.classList.add('playing'); currentAudio = a; currentBtn = btn; }).catch(function(err) { btn.textContent = '⚠'; btn.style.color = 'var(--red)'; setTimeout(() => { btn.textContent = '▶'; btn.style.color = ''; }, 2000); });
 }
 
 function matchesSearch(e) { if (!searchQuery) return true; const q = searchQuery.toLowerCase(); return e.ita.toLowerCase().includes(q) || e.chn.toLowerCase().includes(q) || (e.extra && e.extra.toLowerCase().includes(q)); }
